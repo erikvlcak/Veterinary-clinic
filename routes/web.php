@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/homepage', [HomepageController::class, 'create'])->name('homepage');
-Route::post('/dog', [AnimalListController::class, 'showDogDetails'])->name('dog.details');
+Route::get('/', [HomepageController::class, 'create'])->name('homepage');
+Route::post('/detailsAbout/{name}', [AnimalListController::class, 'showDogDetails'])->name('dog.details');
 Route::post('/owner', [OwnerListController::class, 'displayOwner'])->name('owner.details');
 Route::post('/update', [OwnerListController::class, 'update'])->name('owner.update');
+Route::get('/editInfoAbout/{name}/', [AnimalListController::class, 'editDogDetails'])->name('dog.edit');
+Route::post('/editInfoAbout', [AnimalListController::class, 'editDogDetailsSave'])->name('dog.edit.save');
