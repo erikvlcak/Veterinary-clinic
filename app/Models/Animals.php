@@ -15,6 +15,6 @@ class Animals extends Model
     }
     public function photo()
     {
-        return $this->hasOne(Images::class);
+        return $this->hasOne(Images::class, 'id');
     }
 }

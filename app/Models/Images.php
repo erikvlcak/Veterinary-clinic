@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Images extends Model
 {
-    protected $table = 'images';
     use HasFactory;
+    protected $table = 'images';
     public function animal()
     {
         return $this->hasOne(Animals::class);
