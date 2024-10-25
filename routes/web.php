@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/homepage', [HomepageController::class, 'create']);
+Route::get('/dog/{key}', [AnimalListController::class, 'create'])->name('dog.details');

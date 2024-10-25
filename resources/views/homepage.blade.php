@@ -13,11 +13,14 @@
 
 <ul>List of owners and their pets</ul>
 @foreach ($results as $result)
-<form action="">
-    <li>Owner: {{$result->first_name}} {{$result->surname}}</li>
-    @foreach ($result->animals as $animal)
-    <li>Dog: {{$animal->name}} ({{$animal->breed}} )</li>
 
+<form action="{{route('dog.details','key' -> $animal->id)}}">
+    @csrf
+    <li>Owner: {{$result->first_name}} {{$result->surname}}</li>
+
+    @foreach ($result->animals as $key => $animal)
+    <li>#{{$key+1}} - {{$animal->name}} ({{$animal->breed}} )</li>
+    <button type="submit">See details about {{$animal->name}}</button>
     @endforeach
 
     <div>---</div>
