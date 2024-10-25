@@ -8,15 +8,23 @@
 </head>
 
 <body>
+
+
+
     <form action="{{route('homepage')}}">
-        @csrf
+
         <button type="submit">Go back</button>
-        <li>Name: {{$details->name}}</li>
-        <li>Breed: {{$details->breed}}</li>
-        <li>Age: {{$details->age}}</li>
-        <li>Weight: {{$details->weight}}</li>
-        <img src="/images/pets/{{ $details->photo->path }}" alt="">
     </form>
+    <form action="{{ route('dog.edit', ['name' => $details->name]) }}">
+
+        <input type="hidden" name="id" value="{{$details->id}}">
+        <button type="submit">Edit</button>
+    </form>
+    <li>Name: {{$details->name}}</li>
+    <li>Breed: {{$details->breed}}</li>
+    <li>Age: {{$details->age}}</li>
+    <li>Weight: {{$details->weight}}</li>
+    <img src="/images/pets/{{ $details->photo->path }}" alt="">
 
 </body>
 
