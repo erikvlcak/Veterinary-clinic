@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AnimalListController;
 use App\Http\Controllers\HomepageController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,3 +16,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/homepage', [HomepageController::class, 'create']);
+Route::get('/animals', [AnimalListController::class, 'index']);

@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\AnimalModel;
+use App\Models\Animals;
 
 class AnimalListController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $request = AnimalModel::all();
-        return view('/animal.index', compact('animals'));
+        $name = $request->id;
+        return view('animal.index', compact('animals'));
     }
 }

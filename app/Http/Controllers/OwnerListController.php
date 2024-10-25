@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\OwnerModel;
+use App\Models\Owners;
 
 class OwnerListController extends Controller
 {
     public function index()
     {
-        $request = OwnerModel::all();
+        $request = Owners::all();
         return view('owner.index', compact('owners'));
     }
 }
