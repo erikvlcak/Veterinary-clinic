@@ -10,11 +10,18 @@
 <body>
     <h1>Welcome to St. Hector's Veterinary Clinic</h1>
 </body>
+
 <ul>List of owners and their pets</ul>
 @foreach ($results as $result)
-<li>{{$result->first_name}}</li>
-<li>{{$result->animals[0]->name}}</li>
+<form action="">
+    <li>Owner: {{$result->first_name}} {{$result->surname}}</li>
+    @foreach ($result->animals as $animal)
+    <li>Dog: {{$animal->name}} ({{$animal->breed}} )</li>
 
+    @endforeach
+
+    <div>---</div>
+</form>
 @endforeach
 
 </html>
