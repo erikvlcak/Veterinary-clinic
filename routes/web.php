@@ -16,4 +16,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/homepage', [HomepageController::class, 'create']);
-Route::get('/animals', [AnimalListController::class, 'index']);
+Route::get('/animals', [AnimalListController::class, 'displayAnimal']);

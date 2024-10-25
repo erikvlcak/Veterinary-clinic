@@ -7,7 +7,7 @@ use App\Models\Animals;
 
 class AnimalListController extends Controller
 {
-    public function index(Request $request)
+    public function displayAnimal(Request $request)
     {
         $name = $request->id;
         return view('animal.index', compact('animals'));
