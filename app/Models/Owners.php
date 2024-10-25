@@ -5,11 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class OwnerModel extends Model
+class Owners extends Model
 {
     use HasFactory;
-    public function animal()
+    protected $table = 'owners';
+    public function animals()
     {
-        return $this->hasMany(AnimalModel::class);
+        return $this->hasMany(Animals::class, 'owner_id');
     }
 }
