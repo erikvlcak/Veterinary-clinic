@@ -10,5 +10,11 @@
 <body>
     <h1>Welcome to St. Hector's Veterinary Clinic</h1>
 </body>
+<ul>List of owners and their pets</ul>
+@foreach ($results as $result)
+<li>{{$result->first_name}}</li>
+<li>{{$result->animals[0]->name}}</li>
+
+@endforeach
 
 </html>
